@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+html {
+  box-sizing: border-box;
+}
+
+@keyframes changeBackground {
+  0% {
+    background-image: url('img/galaxy.jpg'); /* Ganti dengan path atau URL gambar pertama */
+  }
+  15% {
+    background-image: url('img/galaxy-2.jpg'); /* Ganti dengan path atau URL gambar pertama */
+  }
+  30% {
+    background-image: url('img/galaxy-3.jpg'); /* Ganti dengan path atau URL gambar kedua */
+  }
+  45% {
+    background-image: url('img/galaxy-4.jpg'); /* Ganti dengan path atau URL gambar kedua */
+  }
+  60% {
+    background-image: url('img/galaxy-5.jpg'); /* Kembali ke gambar pertama */
+  }
+  75% {
+    background-image: url('img/galaxy-6.jpg'); /* Kembali ke gambar pertama */
+  }
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: url('img/galaxy.jpg') center/cover fixed; /* Gambar awal */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  animation: changeBackground 10s infinite; /* Ganti 10s dengan durasi animasi yang diinginkan */
+}
+
+
+.player-container {
+  height: 500px;
+  width: 400px;
+  background: #e4e4e4;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px 5px rgba(0, 0, 0, 0.3);
+}
+
+.img-container {
+  height: 300px;
+  width: 300px;
+  object-fit: cover;
+  position: relative;
+  top: -50px;
+  left: 50px;
+}
+
+.img-container img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 5px 30px 5px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+  font-size: 25px;
+  text-align: center;
+  margin: 0;
+}
+
+h3 {
+  font-size: 20px;
+  text-align: center;
+  font-weight: 400;
+  margin: 5px 0 0;
+}
+
+/* Progress */
+.progress-container {
+  background: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 40px 20px;
+  height: 6px;
+  width: 90%;
+}
+
+.progress {
+  background: #242323;
+  border-radius: 5px;
+  height: 100%;
+  width: 0%;
+  transition: width 0.1s linear;
+}
+
+.duration-wrapper {
+  position: relative;
+  top: -25px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Controls */
+.player-controls {
+  position: relative;
+  top: -15px;
+  left: 120px;
+  width: 200px;
+}
+
+.fas {
+  font-size: 30px;
+  color: rgb(129, 129, 129);
+  margin-right: 30px;
+  cursor: pointer;
+  user-select: none;
+  transition: ease 0.2s;
+}
+
+.fas:hover {
+  transition: ease 0.2s;
+  filter: brightness(60%);
+}
+
+.main-button {
+  font-size: 40px;
+  position: relative;
+  top: 3px;
+}
+
+/* Responsif */
+@media only screen and (max-width: 600px) {
+  .player-container {
+    height: auto;
+    width: 90%;
+  }
+
+  .img-container {
+    height: 200px;
+    width: 200px;
+    top: 0;
+    left: 0;
+    margin: 0 auto;
+  }
+
+  .img-container img {
+    border-radius: 10px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  h3 {
+    font-size: 16px;
+  }
+
+  .progress-container {
+    margin: 20px auto;
+  }
+
+  .player-controls {
+    width: 100%;
+    text-align: center;
+    left: 0;
+  }
+
+  .fas {
+    font-size: 24px;
+    margin-right: 20px;
+  }
+
+  .main-button {
+    font-size: 30px;
+  }
+}
